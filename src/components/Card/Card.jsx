@@ -30,9 +30,9 @@ const Card = () => {
                 })
             }   
             </div>
-            { ! showAll && <span onClick={seeAllData}>
+            { ! showAll && (<span onClick={seeAllData}>
                 <Button>See All</Button>
-            </span>
+            </span>)
             }
         </>
     );
