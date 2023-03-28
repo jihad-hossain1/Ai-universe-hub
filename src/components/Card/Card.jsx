@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import Button from '../Button/Button';
 import Singledata from '../SingleData/Singledata';
 
 const Card = () => {
     const [data, setData] = useState([]); 
     const [showAll, setShowAll] = useState(false);
+    const seeAllData = () => {
+        setShowAll(true);
+    }
     useEffect(() => {
         // fetch('https://openapi.programming-hero.com/api/ai/tools')
         //     .then(res => res.json())
@@ -26,6 +30,10 @@ const Card = () => {
                 })
             }   
             </div>
+            { ! showAll && <span onClick={seeAllData}>
+                <Button>See All</Button>
+            </span>
+            }
         </>
     );
 };
